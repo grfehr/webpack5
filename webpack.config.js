@@ -53,6 +53,12 @@ module.exports = {
                         plugins: [ '@babel/plugin-proposal-class-properties' ]
                     }
                 }
+            },
+            {
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
             }
         ]
     },
@@ -63,9 +69,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Hello World',
-            meta: {
-                description: "Some Description"
-            }
+            description: 'Some Description',
+            template: 'src/index.hbs'
         }),
         new CleanWebpackPlugin()
         // new CleanWebpackPlugin({
@@ -74,5 +79,5 @@ module.exports = {
         //         path.join(process.cwd(), 'build/**/*')
         //     ]
         // })
-    ]
+    ],
 };
