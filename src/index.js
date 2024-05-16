@@ -11,7 +11,5 @@ if (process.env.NODE_ENV === 'production') {
     console.log('Production mode');
 }
 else {
-    console.log('Development Mode');
+    console.log('Development Mode1');
 }
-
-helloWorldButton.methodThatDoesNotExist();
