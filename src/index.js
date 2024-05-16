@@ -6,3 +6,12 @@ heading.render();
 
 const helloWorldButton = new HelloWorldButton();
 helloWorldButton.render();
+
+if (process.env.NODE_ENV === 'production') {
+    console.log('Production mode');
+}
+else {
+    console.log('Development Mode');
+}
+
+helloWorldButton.methodThatDoesNotExist();

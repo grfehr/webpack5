@@ -3,6 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -15,7 +16,7 @@ module.exports = {
         //     keep: /\.css/
         // }
     },
-    mode: 'none',
+    mode: 'development',
     module: {
         rules: [
             {
@@ -71,6 +72,9 @@ module.exports = {
             title: 'Hello World',
             description: 'Some Description',
             template: 'src/index.hbs'
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser'
         }),
         new CleanWebpackPlugin()
         // new CleanWebpackPlugin({
