@@ -21,7 +21,7 @@ module.exports = {
             directory: path.resolve(__dirname, './dist'),
         },
         devMiddleware: {
-            index: 'index.html',
+            index: 'hello-world.html',
             writeToDisk: true
         }
     },
