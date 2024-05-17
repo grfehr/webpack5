@@ -4,9 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'hello-world': './src/hello-world.js',
+        'time': './src/time.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
         publicPath: '',
         // clean: {
@@ -73,9 +76,18 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'hello-world.html',
+            chunks: ['hello-world'],
             title: 'Hello World',
-            description: 'Some Description',
-            template: 'src/index.hbs'
+            description: 'Hello World',
+            template: 'src/page-template.hbs'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'timepage.html',
+            chunks: ['time'],
+            title: 'Time Image',
+            description: 'Time Image',
+            template: 'src/page-template.hbs'
         }),
         new webpack.ProvidePlugin({
             process: 'process/browser'
