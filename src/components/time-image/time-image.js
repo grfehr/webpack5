@@ -1,10 +1,10 @@
-import TimeImage from './Time760x324.png';
+import TimeImagePng from './Time760x324.png';
 import './time-image.scss';
 
 class TimeImage {
     render() {
         const img = document.createElement('img');
-        img.src = TimeImage;
+        img.src = TimeImagePng;
         img.alt = 'Time';
         img.classList.add('time-image');
 
