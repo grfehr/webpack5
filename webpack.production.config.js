@@ -66,9 +66,20 @@ module.exports = {
             filename: '[name].[contenthash].css',
         }),
         new HtmlWebpackPlugin({
+            filename: 'hello-world.html',
+            chunks: ['hello-world'],
             title: 'Hello World',
-            description: 'Some Description',
-            template: 'src/index.hbs'
+            description: 'Hello World Page',
+            template: 'src/page-template.hbs',
+            minify: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'timeimage.html',
+            chunks: ['time'],
+            title: 'Time Image',
+            description: 'Time Image page',
+            template: 'src/page-template.hbs',
+            minify: false
         }),
         new webpack.ProvidePlugin({
             process: 'process/browser'
